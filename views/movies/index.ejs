@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | MovieVerse</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      background: url("https://images.unsplash.com/photo-1608759265465-37f53f885b4c?auto=format&fit=crop&w=1350&q=80") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .backdrop {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+</head>
+<body class="text-white">
+  <div class="backdrop min-h-screen flex flex-col justify-center items-center px-6 py-12">
+    <div class="text-center animate__animated animate__fadeInDown">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6">🎬 Welcome to <span class="text-red-500">MovieMania</span></h1>
+      <p class="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">Book your favorite movie tickets online — faster, smarter, and in style. Dive into a universe of blockbusters, indie gems, and thrilling showtimes!</p>
+
+      <div class="space-x-4 mt-8">
+        <button href="/movies" id="a" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-lg font-semibold shadow-lg animate__animated animate__pulse animate__infinite">Get Started</button>
+        <button ref="/login" class="border border-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition">Login</button>
+      </div>
+    </div>
+
+    <!-- 🔥 Offers -->
+    <div class="mt-16 text-center animate__animated animate__fadeInUp">
+      <h2 class="text-3xl font-bold mb-4">🔥 Today's Hot Deals</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">🍿 Buy 1 Get 1 Free</h3>
+          <p>On selected showtimes every Wednesday!</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">🎁 20% Off for Students</h3>
+          <p>Verify student ID to claim offer.</p>
+        </div>
+        <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">💳 Flat ₹100 Cashback</h3>
+          <p>On bookings with MovieVerse Cards.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 👣 Footer -->
+    <footer class="mt-16 text-sm text-gray-300 animate__animated animate__fadeInUp animate__delay-1s">
+      <p>&copy; <%= new Date().getFullYear() %> Roshni All rights reserved.</p>
+    </footer>
+
+  
+    
+  </div>
+
+
+  <script>
+    const btn = document.getElementById("a");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        // Optional: Add spinner or loading animation here before redirect
+        btn.textContent = "Bas Puch hi gyee...";
+        btn.disabled = true;
+
+
+  
+        setTimeout(() => {
+
+          
+
+          window.location.href = "/loading";
+
+        }, 2000); // 2-second delay
+      });
+    }
+  </script>
+  
+</body>
+</html>
